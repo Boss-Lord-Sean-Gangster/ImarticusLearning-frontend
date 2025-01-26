@@ -1,0 +1,103 @@
+/* Main container for Partners */
+.partners-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f5f6f6;
+}
+
+/* Title of the partners section */
+.partners-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.partners-count {
+    color: #f57c00; /* Orange color */
+}
+
+/* Grid layout for partner logos */
+.partners-logos {
+    justify-self: center;
+    margin-left: -300px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 700px;
+}
+
+/* Partner logos */
+.partners-logos img {
+    background: white;
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Text below the logos */
+.partners-text {
+    font-size: 18px;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .partners-logos {
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+}
+
+@media (max-width: 992px) {
+  .partners-logos {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Enable horizontal scrolling on mobile */
+  .partners-logos {
+    display: flex;
+    overflow-x:scroll;
+    grid-template-columns: repeat(6, 150px); /* Keep logos in a single row */
+    gap: 20px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+    width: 100%;
+    padding: 10px 0; /* To give some space around the logos */
+  }
+
+  /* Show only 2 or 3 logos at a time */
+  .partners-logos img {
+    flex-shrink: 0; /* Prevent logos from shrinking */
+    width: 150px;
+  }
+
+  .partners-title {
+    font-size: 20px;
+  }
+
+  .partners-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Show only 2 logos at a time */
+  .partners-logos {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on very small screens */
+    width: 100%;
+  }
+
+  .partners-title {
+    font-size: 18px;
+  }
+
+  .partners-text {
+    font-size: 14px;
+  }
+}

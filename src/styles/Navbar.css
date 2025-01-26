@@ -1,0 +1,121 @@
+/* Styling for the logo */
+.logo {
+    display: block;
+    margin-left: 50px;
+    width: 200px; /* Adjust the width as per your design */
+  }
+  
+  /* Navbar background color */
+  .navbar {
+    background-color: #035642; /* Dark green background */
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  /* Navbar links container */
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+  }
+  
+  /* Navbar item styling */
+  .nav-item {
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+  }
+  
+  .nav-item:hover {
+    text-decoration: underline;
+  }
+  
+  /* Active navbar item (orange underline) */
+  .nav-item.active {
+    border-bottom: 2px solid orange;
+  }
+  
+  /* Navbar sticky on scroll */
+  .sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure navbar is above other content */
+  }
+  
+  /* Hamburger menu styling */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+  }
+  
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+  }
+  
+  /* Hide navbar items on mobile, and only show them when the menu is open */
+  .navbar-links {
+    display: flex;
+  }
+  
+  .navbar-links.open {
+    display: block;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #035642;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .navbar-links li {
+    display: block;
+    padding: 15px 0;
+    font-size: 18px;
+  }
+  
+  /* Media query for mobile devices */
+  @media screen and (max-width: 768px) {
+    /* Hide the navbar items and show hamburger menu on mobile */
+    .navbar-links {
+      display: none;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    /* Active hamburger lines (rotate to form the 'X' when open) */
+    .hamburger .line.open:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+    .hamburger .line.open:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger .line.open:nth-child(3) {
+      transform: rotate(-45deg);
+      top: -8px;
+    }
+  
+    /* Style navbar items when mobile menu is open */
+    .navbar-links.open {
+      display: block;
+    }
+  
+    /* Adjust the font size for mobile */
+    .nav-item {
+      font-size: 16px;
+    }
+  }
+  

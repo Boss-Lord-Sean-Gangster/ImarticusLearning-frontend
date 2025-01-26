@@ -1,0 +1,125 @@
+/* Container Styling */
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Title */
+  .title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Testimonials Grid */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Testimonial Card */
+  .testimonial-card {
+    background-color: #f5f6f6;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Card Header */
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* User Icon */
+  .user-icon {
+    font-size: 40px;
+    color: #ff6600;
+  }
+  
+  /* Name and Date */
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .date {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+  }
+  
+  /* Testimonial Description */
+  .description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Styling */
+  @media screen and (max-width: 768px) {
+    /* Grid layout for tablets and smaller screens */
+    .testimonials-grid {
+      grid-template-columns: 1fr; /* 1 column */
+      grid-template-rows: auto; /* Auto rows */
+    }
+  
+    /* Title font size for smaller screens */
+    .title {
+      font-size: 28px;
+    }
+  
+    /* User Icon size for smaller screens */
+    .user-icon {
+      font-size: 30px;
+    }
+  
+    /* Name font size for smaller screens */
+    .name {
+      font-size: 16px;
+    }
+  
+    /* Description font size for smaller screens */
+    .description {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* Title font size for mobile screens */
+    .title {
+      font-size: 24px;
+    }
+  
+    /* User Icon size for mobile screens */
+    .user-icon {
+      font-size: 26px;
+    }
+  
+    /* Name font size for mobile screens */
+    .name {
+      font-size: 14px;
+    }
+  
+    /* Description font size for mobile screens */
+    .description {
+      font-size: 12px;
+    }
+  }
+  

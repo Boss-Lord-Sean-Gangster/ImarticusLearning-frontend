@@ -1,0 +1,187 @@
+/* Centering the entire section */
+.curriculum-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Styling for the title and tagline */
+.curriculum-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.curriculum-tagline {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Accordion Section */
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Accordion Section Header */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.accordion-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.accordion-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate the arrow when section is open */
+.accordion-icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.accordion-content {
+    background-color: #fafafa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 3px solid #ff6600;
+    border-radius: 8px;
+}
+
+/* Subcategories */
+.sub-categories {
+    margin-top: 20px;
+}
+
+.sub-categories h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sub-categories ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sub-categories ul li {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px; /* Equal gap between each sub-item */
+}
+
+/* Add spacing between sections */
+.accordion-section {
+    margin-bottom: 20px;
+}
+
+/* For the arrow icon placement on the right */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header h2 {
+    flex: 1; /* Take up remaining space */
+}
+
+.accordion-icon {
+    margin-left: 10px;
+}
+
+/* General body margin for centering */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.download-button {
+    background: #ff6600;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    width: 400px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For devices smaller than 768px (tablets and mobile phones) */
+@media (max-width: 768px) {
+    .curriculum-title {
+        font-size: 26px;
+    }
+
+    .curriculum-tagline {
+        font-size: 16px;
+    }
+
+    .accordion-header h2 {
+        font-size: 18px;
+    }
+
+    .accordion-content {
+        padding: 12px;
+    }
+
+    .download-button {
+        width: 100%;
+        font-size: 18px;
+        height: 60px;
+    }
+
+    .accordion-section {
+        margin-bottom: 15px;
+    }
+}
+
+/* For very small devices like mobile phones */
+@media (max-width: 480px) {
+    .curriculum-title {
+        font-size: 22px;
+    }
+
+    .curriculum-tagline {
+        font-size: 14px;
+    }
+
+    .accordion-header h2 {
+        font-size: 16px;
+    }
+
+    .accordion-content {
+        padding: 10px;
+    }
+
+    .download-button {
+        width: 100%;
+        font-size: 16px;
+        height: 50px;
+    }
+}

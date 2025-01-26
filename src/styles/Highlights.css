@@ -1,0 +1,237 @@
+/* Main container for Highlights and Form */
+.highlights-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 20px;
+    background: #035642;
+    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+}
+
+/* Key Highlights Section */
+.highlights {
+    flex: 1;
+    margin: 50px 50px;
+}
+
+/* Title */
+.highlight-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Highlights Cards */
+.highlights-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    gap: 50px;
+    margin-bottom: 20px;
+    width: 500px;
+}
+
+.highlight-card {
+    background-color: #ff7a4f; /* Orange background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlight-card h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.highlight-card span {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Companies text */
+.highlight-companies-text {
+    text-align: left;
+    font-size: 18px;
+    margin-top: 40px;
+    color: white;
+}
+
+/* Companies logos */
+.company-logos {
+    display: flex;
+    float: left;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.company-logos img {
+    width: 120px; /* Adjust size of logos */
+    object-fit: contain;
+}
+
+/* Form Section */
+.form-container {
+    flex: 0.5;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    height: 600px;
+    margin: 50px 50px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Title */
+.form-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 16px;
+    color: #333;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+form input:focus {
+    border-color: #ff7a4f; /* Focus border color */
+}
+
+/* Submit Button */
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #ff7a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e65100;
+}
+
+/* Responsive styles */
+
+/* For tablets and small screens */
+@media (max-width: 768px) {
+    .highlights-container {
+        flex-direction: column; /* Stack the elements vertically */
+        padding: 30px 10px;
+    }
+
+    .highlights-cards {
+        /* grid-template-columns: 1fr; One column for cards */
+        width: 50%;
+        justify-self: center;
+        margin-bottom: 20px;
+        margin-left: -200px;
+    }
+
+    .highlight-companies-text{
+        text-align: center;
+        font-size: 16px;
+        margin-left: -10px;
+        width: 100%;
+    }
+    .highlight-card {
+        width: 150px; /* Make cards take full width */
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .company-logos {
+        /* flex-direction: column; Stack logos vertically */
+        gap: 5px;
+        margin-top: 20px;
+    }
+
+    .form-container {
+        width: 90%; /* Make the form take full width */
+        height: auto; /* Adjust form height on smaller screens */
+        margin-left: 20px;
+    }
+    
+    .form-title {
+        font-size: 18px; /* Reduce font size for form title */
+    }
+
+    form label {
+        font-size: 14px; /* Smaller font size for labels */
+    }
+
+    form input {
+        font-size: 14px; /* Smaller font size for inputs */
+    }
+
+    .submit-btn {
+        font-size: 14px; /* Smaller font size for button */
+        padding: 10px 15px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .highlight-title {
+        font-size: 28px; /* Adjust font size of title */
+    }
+
+    .highlight-card h4 {
+        font-size: 28px; /* Smaller font size for highlight cards */
+    }
+
+    .highlight-card span {
+        font-size: 16px; /* Smaller font size for highlight text */
+    }
+
+    .company-logos img {
+        width: 80px; /* Smaller logos on mobile */
+    }
+
+    .form-container {
+        padding: 20px;
+        margin: 20px 10px;
+        height: auto;
+    }
+
+    .form-title {
+        font-size: 16px;
+    }
+
+    form input {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
+}

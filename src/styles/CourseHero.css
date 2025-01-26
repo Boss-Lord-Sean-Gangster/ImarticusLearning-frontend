@@ -329,8 +329,10 @@ body {
 }
 
 .instructor-section h4 {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 50px;
+    margin-left: 50px;
     color: #555;
 }
 
@@ -398,6 +400,8 @@ body {
 
 .curriculum-section li {
   background: #f5f6f6;
+  align-self: center;
+  margin-left: 120px;
   width: 900px;
   height: 60px;
   font-size: 20px;
@@ -445,6 +449,7 @@ body {
     font-size: 18px;
     padding: 15px 20px;
     text-align: center;
+    margin-left: 0px;
   }
 
   .description-section p,

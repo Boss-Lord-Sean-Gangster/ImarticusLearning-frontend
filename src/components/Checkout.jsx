@@ -20,6 +20,40 @@ export default function Checkout() {
       .catch((error) => console.error("Error fetching course data:", error));
   }, [courseId]);
 
+
+   // Razorpay Payment Function
+   const handlePayment = () => {
+    if (!courseDetails) return;
+
+    const options = {
+      key: "rzp_test_lbGubwsxDLMmOW", // Replace with your Razorpay API Key
+      amount: courseDetails.price * 100, // Convert amount to smallest unit (e.g., paise)
+      currency: "INR",
+      name: "Imarticus Learning",
+      description: `Purchase of ${courseDetails.title}`,
+      image: "https://example.com/logo.png", // Replace with your logo URL
+      handler: function (response) {
+        // Handle payment success
+        console.log("Payment Successful!", response);
+        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+      },
+      prefill: {
+        name: "Your Name", // Replace with user name
+        email: "youremail@example.com", // Replace with user email
+        contact: "9876543210", // Replace with user phone
+      },
+      notes: {
+        course_id: courseId,
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
   // Show loading message while courseDetails is being fetched
   if (!courseDetails) {
     return <SkeletonLoader/>;
@@ -141,7 +175,7 @@ export default function Checkout() {
               </div>
             </div>
 
-            <Button className="w-100 bg-success text-white h-12">Pay ₹{courseDetails.price}</Button>
+            <Button className="w-100 bg-success text-white h-12" onClick={handlePayment}>Pay ₹{courseDetails.price}</Button>
 
             <div className="d-flex justify-content-center mt-4">
               <img src="/placeholder.svg" alt="Secure checkout" width={100} height={32} className="opacity-50" />

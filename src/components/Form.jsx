@@ -3,16 +3,15 @@ import React, { useState } from 'react';
 import '../styles/Form.css';
 import { useNavigate } from 'react-router-dom';
 
-const Form = ({ closeForm,courseId }) => {
+const Form = ({ closeForm, courseId }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate(`/checkout/${courseId}`)
+    navigate(`/checkout/${courseId}`);
     console.log(courseId);
     const userData = { name, email, password };
 
@@ -40,7 +39,7 @@ const Form = ({ closeForm,courseId }) => {
   return (
     <div className="enroll-form-overlay">
       <div className="enroll-form">
-        <button className="close-btn" onClick={closeForm}>X</button>
+        <button className="close-btn" onClick={closeForm}>×</button>
         <h2>Enroll Now</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -66,24 +65,14 @@ const Form = ({ closeForm,courseId }) => {
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
-              type="text"
+              type="password"
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          {/* <div className="form-group">
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              type="text"
-              id="phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-            />
-          </div> */}
-          <button type="submit">Submit</button>
+          <button type="submit" className='submit-btn'>Submit</button>
         </form>
       </div>
     </div>

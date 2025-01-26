@@ -53,6 +53,7 @@ export default function Checkout() {
     const rzp = new window.Razorpay(options);
     rzp.open();
   };
+  
 
   // Show loading message while courseDetails is being fetched
   if (!courseDetails) {

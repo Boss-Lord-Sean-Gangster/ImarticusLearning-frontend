@@ -1,0 +1,113 @@
+/* Section Styles */
+
+/* Section title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Accordion Container */
+  .accordion {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Accordion Section */
+  .accordion-section {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Accordion Header */
+  .accordion-header {
+    background-color: #4c9f70; /* Change the color to match the theme */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .accordion-header:hover {
+    background-color: #3a7d56; /* Slightly darker green on hover */
+  }
+  
+  .accordion-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Accordion Icon */
+  .accordion-icon {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-icon.rotate {
+    transform: rotate(180deg);
+  }
+  
+  /* Accordion Content */
+  .accordion-content {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 3px solid #4c9f70;
+    border-bottom: 3px solid #ddd;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .list-group-item {
+    background-color: #fafafa;
+    border: none;
+  }
+  
+  .list-group-item.text-muted {
+    color: #6c757d;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 28px;
+    }
+  
+    .accordion-header {
+      padding: 12px;
+    }
+  
+    .accordion-title {
+      font-size: 18px;
+    }
+  
+    .accordion-content {
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 24px;
+    }
+  
+    .accordion-header {
+      padding: 10px;
+    }
+  
+    .accordion-title {
+      font-size: 16px;
+    }
+  
+    .accordion-content {
+      padding: 10px;
+    }
+  }
+  

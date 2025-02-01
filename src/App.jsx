@@ -14,6 +14,9 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Landing from './pages/Landing'
 import Course from './pages/Course'
 import CourseCheckout from './pages/CourseCheckout'
+import Lms from './pages/Lms'
+import VideoLms from './pages/VideoLms'
+import DocumentLms from './pages/DocumentLms'
 
 function App() {
 
@@ -21,9 +24,12 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/course" element={<Course />} />
-          <Route path="/checkout/:id" element={<CourseCheckout />} />
+        <Route path="/" element={<Landing />} />
+          <Route path="/lms/:id" element={<Lms/>} />
+            <Route path="/course" element={<Course />} /> 
+           <Route path="/checkout/:id" element={<CourseCheckout />} />
+           <Route path="/video/:id" element={<VideoLms />} />
+           <Route path="/document/:id" element={<DocumentLms />} />
         </Routes>
       </Router>
     </>

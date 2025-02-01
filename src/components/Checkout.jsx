@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Card, InputGroup, FormControl } from "react-bootstrap";
 import { FaBookOpen, FaUsers, FaBriefcase } from "react-icons/fa";
-import { useLocation, useParams } from "react-router-dom"; // Use useLocation for handling URL path
+import { useLocation, useParams, useNavigate } from "react-router-dom"; // Use useNavigate for navigation
 import DocumentViewer from "./DocumentViewer";
 import SkeletonLoader from "./SkeletonLoader";
 
@@ -9,6 +9,7 @@ export default function Checkout() {
   const [courseDetails, setCourseDetails] = useState(null);
   const [discountCode, setDiscountCode] = useState("");
   const courseId = useParams().id;
+  const navigate = useNavigate(); // Hook for navigation
 
   // Fetch course data based on the course ID
   useEffect(() => {
@@ -20,9 +21,8 @@ export default function Checkout() {
       .catch((error) => console.error("Error fetching course data:", error));
   }, [courseId]);
 
-
-   // Razorpay Payment Function
-   const handlePayment = () => {
+  // Razorpay Payment Function
+  const handlePayment = () => {
     if (!courseDetails) return;
 
     const options = {
@@ -36,6 +36,9 @@ export default function Checkout() {
         // Handle payment success
         console.log("Payment Successful!", response);
         alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+
+        // Redirect user to success page after successful payment
+        navigate(`/lms/${courseId}`); // Example path
       },
       prefill: {
         name: "Your Name", // Replace with user name
@@ -53,11 +56,10 @@ export default function Checkout() {
     const rzp = new window.Razorpay(options);
     rzp.open();
   };
-  
 
   // Show loading message while courseDetails is being fetched
   if (!courseDetails) {
-    return <SkeletonLoader/>;
+    return <SkeletonLoader />;
   }
 
   return (
@@ -176,15 +178,23 @@ export default function Checkout() {
               </div>
             </div>
 
-            <Button className="w-100 bg-success text-white h-12" onClick={handlePayment}>Pay ₹{courseDetails.price}</Button>
+            <Button className="w-100 bg-success text-white h-12" onClick={handlePayment}>
+              Pay ₹{courseDetails.price}
+            </Button>
 
             <div className="d-flex justify-content-center mt-4">
-              <img src="/placeholder.svg" alt="Secure checkout" width={100} height={32} className="opacity-50" />
+              <img
+                src="/placeholder.svg"
+                alt="Secure checkout"
+                width={100}
+                height={32}
+                className="opacity-50"
+              />
             </div>
           </Card>
         </div>
       </div>
-      <DocumentViewer courseId={courseId} />
+      {/* <DocumentViewer courseId={courseId} /> */}
     </div>
   );
 }

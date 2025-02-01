@@ -19,7 +19,7 @@ export function DynamicSideBar() {
     >
       <div className="p-4 border-bottom border-dark">
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-4YzL4RwBDXkSlXo8BxHzgPsywQHh7g.png"
+          src="Imarticus-logo.png"
           alt="iMarticus Learning"
           width="150"
           height="40"
